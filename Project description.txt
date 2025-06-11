@@ -1,0 +1,24 @@
+ Project Description
+This project is a graphical Lisp-like interpreter developed in C++ with a Qt-based user interface. It evaluates symbolic expressions and visually renders their output on a canvas in real time. Users can define variables, perform computations, and generate geometric graphics—including points, lines, arcs, rectangles, ellipses, and filled shapes—using a simplified Lisp syntax.
+
+The interface includes:
+
+A REPL (Read-Eval-Print Loop) input box for entering expressions
+
+A drawing canvas for visual output
+
+A message display area for feedback and error reporting
+
+The interpreter supports:
+
+Arithmetic, logical, and trigonometric operations
+
+Variable definition and scope management
+
+Special forms such as define, begin, and if
+
+Graphical procedures like draw, point, line, rect, fill_rect, and ellipse
+
+The system is fully unit tested, featuring both back-end evaluation tests and Qt GUI tests. It also includes a command-line mode for running scripts or single expressions.
+
+This makes it ideal for educational settings, prototyping visual logic, or exploring the fundamentals of language interpretation and graphical rendering.

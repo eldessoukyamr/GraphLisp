@@ -1,0 +1,70 @@
+; draw an airplane
+
+(begin
+
+    ; light blue RGB color code
+    (define r 135)
+    (define g 206)
+    (define b 235)
+
+    ; windows :)
+    (draw
+        (fill_rect (rect -40 -40   0 -65) r g b)
+        (fill_rect (rect  30 -40  70 -65) r g b)
+        (fill_rect (rect 100 -40 140 -65) r g b)
+        (fill_rect (rect 180 -40 280 -65) r g b)
+
+        (rect -40 -40   0 -65)
+        (rect  30 -40  70 -65)
+        (rect 100 -40 140 -65)
+        (rect 180 -40 280 -65)
+    )
+
+    ; wing 1
+    (draw
+        (line (point -130 -130) (point -200 -260))
+        (line (point -200 -260) (point  -90 -260))
+        (line (point  -90 -260) (point  100 -130))
+    )
+
+    ; wing 2
+    (draw
+        (line (point -130 30)  (point -250 190))
+        (line (point -250 190) (point -150 190))
+        (line (point -150 190) (point   90  30))
+    )
+
+    ; fuselage
+    (draw
+        (line (point -280 -100)(point -130 -130))
+        (line (point 100 -130) (point (- -200) -140))
+        (line (point -130 -130)  ( point    100             -130))
+        (line(point -280   (- 100))(point -340 -150))
+
+        (line (point -340 -150) (point -390 -150))
+        (line (point -390 -150) (point -350   10))
+        (line (point -350   10) (point -130   30))
+        (line (point   90   30) (point  200   30))
+    )
+
+    ; nose :(
+    (draw
+        (ellipse (rect 50 30 350 -30))
+        (fill_rect (rect 50 0 350 -30) 255 255 255)
+        (fill_rect (rect 50 0 200 30) 255 255 255)
+
+        (arc (point 200 -40) (point 200 -140) (/ pi -3))
+
+        (line
+            (point 300 -50)
+            (point
+                (+ 200 (* 100 (sin (/ pi 3))))
+                (- -40 (* 100 (cos (/ pi 3))))
+            )
+        )
+
+        (arc (point 300 0) (point 300 -50) (/ pi -2))
+        (point 349 0)
+    )
+
+)
